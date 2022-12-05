@@ -2,7 +2,7 @@
 
 function bigger() {
 	var words = document.getElementByID("textbox");
-	words.style.fontSize="24pt";
+	words.style.fontSize="24px";
 	hello();
 }
 
@@ -18,6 +18,3 @@ function fancy() {
 	words.style.text-decoration = "underline";
 	hello();
 }
-	
-function boring() {
-	words.
