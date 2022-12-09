@@ -7,14 +7,14 @@ console.log("Use strict...");
   
 	function init() {
 		console.log("Window loaded!");
-		document.getElementById("cookieLabel").innerHTML = "Cookie Count: " + localStorage.getItem("cookieCount");
-		console.log("Cookie Count loaded.");
 		document.getElementById("cookiecount").addEventListener("click", cookieCount);
 		console.log("Cookie Count button event listener created.");
 		if (!localStorage.getItem("cookieCount")) // if no cookies yet
 		{
 			window.localStorage.setItem("cookieCount",0);	// set to 0/make
 		}
+		document.getElementById("cookieLabel").innerHTML = "Cookie Count: " + localStorage.getItem("cookieCount");
+		console.log("Cookie Count loaded.");
 		console.log(localStorage.getItem("cookieCount"));
 	}
 	
