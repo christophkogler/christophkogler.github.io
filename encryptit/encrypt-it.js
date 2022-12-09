@@ -30,14 +30,23 @@ TODO: Write a function comment using JSDoc.
 		//console.log("Text lower cased...");
 		var result = "";
 		//console.log("Result var created...");
-		for (let i = 0; i < text.length; i++){
-			//console.log("Looping.");
-			if (text.charCodeAt(i) > 96 && text.charCodeAt(i) < 122) // if the letter is in a to y
-			{	result = result.concat(String.fromCharCode(text.charCodeAt(i) + 1));	} 
-			else if (text.charCodeAt(i) == 122)		// if z
-			{	result = result.concat("a");	}
-			else if (text.charCodeAt(i) == 32)		// if space
-			{	result = result.concat(" ");	}
+		if (document.getElementById("cipher-type").value == "shift")
+		{
+			for (let i = 0; i < text.length; i++){
+				//console.log("Looping.");
+				if (text.charCodeAt(i) > 96 && text.charCodeAt(i) < 122) // if the letter is in a to y
+				{	result = result.concat(String.fromCharCode(text.charCodeAt(i) + 1));	} 
+				else if (text.charCodeAt(i) == 122)		// if z
+				{	result = result.concat("a");	}
+				else if (text.charCodeAt(i) == 32)		// if space
+				{	result = result.concat(" ");	}
+			}
+		}
+		else {
+			for(let i = 0; i < text.length; i++)
+			{
+				result = result.concat(String.fromCharCode(Math.floor(Math.random() * (122 - 97 + 1)) + 97));
+			}
 		}
 		document.getElementById("result").innerText = result;
 		console.log("Done!");
